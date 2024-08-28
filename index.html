@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéDex Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.5s ease;
+        }
+        /* Dynamic background styles */
+        .bg-normal { background-color: #A8A878; }
+        .bg-fire { background-color: #F08030; }
+        .bg-water { background-color: #6890F0; }
+        .bg-electric { background-color: #F8D030; }
+        .bg-grass { background-color: #78C850; }
+        .bg-ice { background-color: #98D8D8; }
+        .bg-fighting { background-color: #C03028; }
+        .bg-poison { background-color: #A040A0; }
+        .bg-ground { background-color: #E0C068; }
+        .bg-flying { background-color: #A890F0; }
+        .bg-psychic { background-color: #F85888; }
+        .bg-bug { background-color: #A8B820; }
+        .bg-rock { background-color: #B8A038; }
+        .bg-ghost { background-color: #705898; }
+        .bg-dragon { background-color: #7038F8; }
+        .bg-dark { background-color: #705848; }
+        .bg-steel { background-color: #B8B8D0; }
+        .bg-fairy { background-color: #EE99AC; }
+        .fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-in.loaded {
+    opacity: 1;
+}
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-red-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold flex items-center">
+                    <img src="gaming.png" alt="Pokeball" class="w-8 h-8 mr-2">
+                    PokéDex Pro
+                </a>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#" class="hover:text-yellow-300 transition duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-yellow-300 transition duration-300">Types</a></li>
+                    <li><a href="#" class="hover:text-yellow-300 transition duration-300">About</a></li>
+                </ul>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between bg-white rounded-lg shadow-md p-6">
+                <div class="w-full md:w-2/3 mb-4 md:mb-0">
+                    <div class="relative">
+                        <input type="text" placeholder="Search Pokémon" class="w-full px-4 py-2 pl-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="filter-button" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300 flex items-center">
+                        <i class="fas fa-filter mr-2"></i> Filter
+                    </button>
+                    <!-- Filter dropdown will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="pokemon-list">
+            <!-- Pokemon cards will be dynamically added here -->
+        </section>
+
+        <div id="pagination" class="flex justify-center items-center space-x-2 mt-8">
+            <!-- Pagination will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 PokéDex Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
